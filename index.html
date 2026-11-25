@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#070a18" />
+<meta name="description" content="Official scientific program of the 22nd International Congress on Plasma Physics — ICPP 2026, Hyderabad, India, December 6–11, 2026." />
+<title>ICPP 2026 · Scientific Program</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+<script>
+  /* Apply the saved theme before first paint to avoid a flash. */
+  try { if (localStorage.getItem('icpp-theme') === 'dark') document.documentElement.dataset.theme = 'dark'; } catch (e) {}
+</script>
+</head>
+<body>
+
+<!-- Global plasma research background -->
+<div class="bg-aurora" aria-hidden="true"></div>
+<canvas id="bgPlasma" class="bg-plasma" aria-hidden="true"></canvas>
+
+<!-- Progress bar -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- ================= NAV ================= -->
+<header class="site-header" id="header">
+  <nav class="nav container" aria-label="Main navigation">
+    <a class="brand" href="#top" aria-label="ICPP 2026 home">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="brand-text">ICPP<span class="brand-year">2026</span></span>
+    </a>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#program" class="nav-link">Program</a>
+      <a href="#themes" class="nav-link">Themes</a>
+      <a href="#speakers" class="nav-link">Speakers</a>
+      <a href="#social" class="nav-link">Social</a>
+    </div>
+
+    <div class="nav-actions">
+      <a class="btn btn-sm btn-outline nav-dl" href="https://icpp2026.iitd.ac.in/files/ICPP2026ProgramOverview.pdf" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v3h16v-3"/></svg>
+        <span>Program PDF</span>
+      </a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" title="Toggle dark / light mode">
+        <svg class="tt-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+        <svg class="tt-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="hero">
+    <canvas id="plasmaCanvas" aria-hidden="true"></canvas>
+    <div class="hero-torus" aria-hidden="true">
+      <svg viewBox="0 0 600 600">
+        <defs>
+          <linearGradient id="torusGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#22d3ee" />
+            <stop offset="50%" stop-color="#8b5cf6" />
+            <stop offset="100%" stop-color="#f472b6" />
+          </linearGradient>
+        </defs>
+        <g class="torus-lines">
+          <ellipse cx="300" cy="300" rx="262" ry="96" />
+          <ellipse cx="300" cy="300" rx="220" ry="80" />
+          <ellipse cx="300" cy="300" rx="176" ry="64" />
+          <ellipse cx="300" cy="300" rx="132" ry="48" />
+        </g>
+        <g class="torus-dashes">
+          <circle cx="300" cy="300" r="256" stroke-dasharray="2 12" />
+          <circle cx="300" cy="300" r="206" stroke-dasharray="1 16" />
+        </g>
+        <circle class="torus-core" cx="300" cy="300" r="104" />
+      </svg>
+    </div>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-vignette" aria-hidden="true"></div>
+
+    <div class="container hero-inner">
+      <div class="hero-badge reveal">
+        <span class="pulse-dot"></span>
+        22<sup>nd</sup> International Congress on Plasma Physics
+      </div>
+
+      <h1 class="hero-title reveal" style="--d:.08s">
+        The <span class="grad-text">plasma</span> community<br />comes together.
+      </h1>
+
+      <p class="hero-sub reveal" style="--d:.16s">
+        Six days of discovery — from magnetic confinement to the cosmos.
+        Explore the complete scientific program of <strong>ICPP 2026</strong>.
+      </p>
+
+      <div class="hero-meta reveal" style="--d:.24s">
+        <div class="meta-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4m8-4v4"/></svg>
+          <span><strong>06 – 11 December 2026</strong><small>Monday to Friday</small></span>
+        </div>
+        <span class="meta-divider" aria-hidden="true"></span>
+        <div class="meta-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <span><strong>Hyderabad, India</strong><small>Leonia Holistic Destination, Shamirpet</small></span>
+        </div>
+      </div>
+
+      <div class="hero-cta reveal" style="--d:.32s">
+        <a href="#program" class="btn btn-primary">
+          Explore the program
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+        </a>
+        <a href="#speakers" class="btn btn-ghost">Plenary speakers</a>
+      </div>
+
+      <div class="countdown reveal" style="--d:.4s" id="countdown" aria-live="polite">
+        <span class="countdown-label">Congress begins in</span>
+        <div class="cd-units">
+          <div class="cd-unit"><b id="cdDays">--</b><small>days</small></div>
+          <span class="cd-colon">:</span>
+          <div class="cd-unit"><b id="cdHours">--</b><small>hrs</small></div>
+          <span class="cd-colon">:</span>
+          <div class="cd-unit"><b id="cdMins">--</b><small>min</small></div>
+          <span class="cd-colon">:</span>
+          <div class="cd-unit"><b id="cdSecs">--</b><small>sec</small></div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#program" class="scroll-cue" aria-label="Scroll to program"><span></span></a>
+  </section>
+
+  <!-- ================= STATS ================= -->
+  <section class="stats-wrap" aria-label="Conference at a glance">
+    <div class="container stats">
+      <div class="stat reveal"><b>06</b><span>Days of science</span></div>
+      <div class="stat reveal" style="--d:.06s"><b>08</b><span>Research themes</span></div>
+      <div class="stat reveal" style="--d:.12s"><b>19</b><span>Plenary speakers</span></div>
+      <div class="stat reveal" style="--d:.18s"><b>100+</b><span>Invited speakers</span></div>
+      <div class="stat reveal" style="--d:.24s"><b>2026</b><span>Hyderabad, India</span></div>
+    </div>
+  </section>
+
+  <!-- ================= PROGRAM ================= -->
+  <section class="section program-section" id="program">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow"><span></span> Scientific Program</div>
+        <h2 class="section-title">Plan your <span class="grad-text">days</span></h2>
+        <p class="section-lead">Pick a day to see the full timetable — plenaries, parallel sessions, breaks and social events, all in one place.</p>
+      </div>
+
+      <!-- Day selector -->
+      <div class="day-tabs-wrap reveal" style="--d:.1s">
+        <div class="day-tabs" id="dayTabs" role="tablist" aria-label="Choose program day"></div>
+      </div>
+
+      <!-- Legend -->
+      <div class="legend-bar reveal" style="--d:.16s">
+        <div class="legend-items" id="legendItems"></div>
+        <label class="focus-select">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M7 12h10m-7 7h4"/></svg>
+          <span>Focus</span>
+          <select id="focusSelect" aria-label="Highlight one track">
+            <option value="">All tracks</option>
+          </select>
+        </label>
+      </div>
+
+      <!-- Program panel -->
+      <div class="program-panel reveal" style="--d:.2s" id="programPanel" role="tabpanel" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- ================= THEMES ================= -->
+  <section class="section themes-section" id="themes">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow"><span></span> Conference Themes</div>
+        <h2 class="section-title">Eight windows into <span class="grad-text">plasma</span></h2>
+        <p class="section-lead">From fusion reactors to the interstellar medium — the full breadth of plasma science.</p>
+      </div>
+      <div class="theme-grid" id="themeGrid"></div>
+    </div>
+  </section>
+
+  <!-- ================= SPEAKERS ================= -->
+  <section class="section speakers-section" id="speakers">
+    <div class="container">
+      <div class="section-head section-head-split reveal">
+        <div>
+          <div class="eyebrow"><span></span> On the Stage</div>
+          <h2 class="section-title">Plenary <span class="grad-text">speakers</span></h2>
+        </div>
+        <p class="section-lead">Leading voices from across the globe share their latest results and perspectives.</p>
+      </div>
+      <div class="speaker-grid" id="speakerGrid"></div>
+    </div>
+  </section>
+
+  <!-- ================= SOCIAL ================= -->
+  <section class="section social-section" id="social">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow"><span></span> Beyond the Lectures</div>
+        <h2 class="section-title">Social <span class="grad-text">program</span></h2>
+        <p class="section-lead">Science is only half the story. Connect, celebrate and explore together.</p>
+      </div>
+      <div class="social-grid" id="socialGrid"></div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card reveal">
+        <div class="cta-orb" aria-hidden="true"></div>
+        <div class="cta-content">
+          <div class="eyebrow"><span></span> See you in Hyderabad</div>
+          <h2>Be part of the conversation.</h2>
+          <p>Registration, travel details and the latest updates are on the official congress website.</p>
+          <div class="cta-buttons">
+            <a href="https://icpp2026.iitd.ac.in/registration" target="_blank" rel="noopener" class="btn btn-primary">Register now
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+            </a>
+            <a href="https://icpp2026.iitd.ac.in/" target="_blank" rel="noopener" class="btn btn-ghost">Official website</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+      <div><strong>ICPP 2026</strong><small>22nd International Congress on Plasma Physics</small></div>
+    </div>
+    <div class="footer-links">
+      <a href="https://icpp2026.iitd.ac.in/program" target="_blank" rel="noopener">Official program</a>
+      <a href="https://icpp2026.iitd.ac.in/venue_travel" target="_blank" rel="noopener">Venue &amp; travel</a>
+      <a href="https://icpp2026.iitd.ac.in/committees" target="_blank" rel="noopener">Committees</a>
+    </div>
+    <p class="footer-copy">© 2026 BTSD Institute for Plasma Research · December 6–11, 2026 · Hyderabad, India</p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6"/></svg>
+</button>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/plasma-bg.js"></script>
+</body>
+</html>
